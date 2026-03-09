@@ -1,0 +1,82 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #709e90;
+    margin: 0;
+}
+
+h1{
+    color: white;
+}
+
+p{ 
+    color: white;
+}
+
+#mainHeader {
+    background-image: url(../Assets/Img/profile2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: lightskyblue;
+    text-align: center; 
+    padding: 20px;
+}
+
+.card{
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid white;
+
+}
+
+section{
+    width: 90%;
+    margin: 20px auto!important;
+}
+
+.profileImg{
+    width: 80px;
+    display: block;
+    margin: 0 auto 20px;
+    border: 3px solid white;
+    border-radius: 20px;
+}
+
+button{
+/* background-color: lightblue, border: 5px white, border-radius: 10px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: whitesmoke;
+    border-color: darkcyan;
+    border: 5px darkcyan;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover { 
+/* add button: hover rule */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: lightblue;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+input:focus {
+/* add input:focus rule */
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: none;
+    outline: none;
+}
+
+p:first-child {
+/* add p:first-child rule */
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+}
