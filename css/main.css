@@ -733,7 +733,7 @@ body {
 .contactForm h1 {
     font-size: 24pt;
     margin-bottom: 25px;
-    letter word-spacing: 1px;
+   letter-spacing: 1px;
 }
 
 .formElement input, .elementForm textarea {
