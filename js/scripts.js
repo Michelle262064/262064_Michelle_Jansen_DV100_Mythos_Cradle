@@ -1,38 +1,15 @@
-document.addEventListener('DOMContentLoaded', () => {
-    //cart badge//
-    const cartAmount = document.querySelector('.cart-amount');
-    if (cartAmount){
-        cartAmount.textContent = localStorage.getItem('myCartCount') || '0';
-    }
-    const updateCartDisplay = () => {
-       if (cartAmount) {
-         const savedCount = localStorage.getItem('mythosCartCount') || '0';
-         cartAmount.textContent = savedCount;
-        }
-    }
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll("#carouselExample .carousel-item");
+  let index = 0;
 
-syncCart();
+  const showSlide = (newIndex) => {
+    items[index].classList.remove("active");
+    index = (newIndex + items.length) % items.length;
+    items[index].classList.add("active");
+  };
 
-const searchInput = document.querySelector('.search-cart input');
-const cards = document.querySelectorAll('.card-section-container .card');
+  document.getElementById("prevBtn").addEventListener("click", () => showSlide(index - 1));
+  document.getElementById("nextBtn").addEventListener("click", () => showSlide(index + 1));
+})
 
-if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase().trim();
-
-        cards.forEach(card => {
-            const title = card.querySelector('h4').textContent.toLocaleLowerCase();
-            const description = card.querySelector(p).textContent.toLowerCase();
-
-            if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                card.style.display = "";
-                card.style.opacity = "1";
-            } else {
-                card.style.display = "none";
-            }
-        })
-    }
-,)}
-
-
+//search//

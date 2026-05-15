@@ -164,64 +164,61 @@ body {
 
 
 /*--about section--*/
-.container {
-    max-width: 1300px;
-    margin: 0;
-    padding: 80px 20px;
-}
-
-.split {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-
-.reverse { flex-direction: row-reverse; }
-
 .feature-dark {
     background-color: var(--primary-blue);
     color: var(--text-primary-white);
+    padding: 6rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    box-sizing: border-box;
+    min-width: 100%;
 }
 
-.image-box {
-    flex: 1;
-    width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    height: 600px;
-    position: relative !important;
+#about {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
+
+.carousel {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.carousel-inner {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  height: 520px;
+  object-fit: cover; 
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50% !important;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px !important; /* Overrides full-height stretching */
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 5;
+}
+
 
 .content-column {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    margin: 0;
-}
-
-.carousel-item img {
-    object-fit: cover;
-    width: 100%;
-    height: 600px;
-    display: block;
-}
-
-.carousel-item .carousel-inner {
-    transition: 2s;
-    transition-property: opacity;
-}
-
-.carouselslide {
-   max-height: 300px;
-   margin-left: 3%;
-}
-
-.content-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     margin: 0;
 }
@@ -275,57 +272,84 @@ body {
 /*--Info Section--*/
 .info-section {
     background-color: var(--text-primary-white);
-    height: 600px;
-    width: 1920px;
+    display: flex;
     justify-content: center;
-    padding-left: 5%;
+    align-items: center;
+    height: 80vh;
+    box-sizing: border-box;
+    min-width: 100%;
 }
 
-.container-split {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    max-height: 1200px;
+.info-section .container.split {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.textbox, .image-box {
+  flex-direction: row-reverse;
+  gap: 10%;
+}
+
+.textbox{
+    width: 660px;
+    margin: 0;
+    align-content: flex-start;
 }
 
 .image-box img {
-    max-width: 2000px;
-    max-height: 1200px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    margin-left: 10%;
-
+    height: 50vh;
+    min-width: 600px;
 }
-
-.textbox {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    font-family: 'Poppins', sans-serif;
-    padding-left: 4%;
-}
-
-.textbox p {
-    display: block;
-    color: var(--bright-cyan);
-    font-size: 16pt;
-    font-weight: normal;
-    text-transform: uppercase;
-}
-
-.textbox h2 {
-    color: var(--primary-blue);
+.subheading{
+    font-family: "Poppins" regular;
     font-size: 24pt;
-    font-weight: bold;
-    margin: 0;
+    font-weight:normal;
+}
+.h2 {
+   font-family: "Poppins" bold; 
+   font-size: 40pt;
 }
 
-.textbox p1 {
-   display: block;
-   color: var(--text-primary-black);
-   font-size: 16pt;
-   margin-top: 20px;
-   font-weight: normal;
+.info-section .textbox .subheading {
+  display: block;
+  color: var(--bright-cyan);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.info-section .textbox h2 {
+  color: var(--primary-blue);
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 1.8rem 0;
+  letter-spacing: -0.5px;
+}
+.info-section .textbox .description {
+  color: var(--text-primary-black) transparent ;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  font-weight: 400;
+  margin: 0;
+}
+
+.info-section .image-box {
+  flex: 0.9;
+  max-width: 500px;
+}
+
+.info-section .image-box img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
 }
 
 /*--Cards Section--*/
