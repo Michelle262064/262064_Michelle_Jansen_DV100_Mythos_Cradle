@@ -100,13 +100,20 @@
           </div>
        </div>
        <!--Contact Form-->
-       <form id="contactForm" onsubmit="handleFormSubmit(event)">
-         <label for="username">Name:</label>
-         <input type="text" id="username" placeholder="Your Name" name="name" required>
-         <label for="email">Email Address:</label>
-         <input type="email" id="email" placeholder="Your email address.." name="email" required>
-         <label for="message">Message:</label>
-         <textarea id="message" placeholder="Your message.." name="message" required></textarea>
+       <form id="contactForm" class="contact-card-form" onsubmit="handleFormSubmit(event)">
+         <h2>SEND US A MESSAGE</h2>
+         <div class="input-group">
+           <label for="username">Name:</label>
+           <input type="text" name="name" id="username" placeholder="Your Name" required>
+         </div>   
+         <div class="input-group">
+           <label for="email">Email Address:</label>
+           <input type="email" id="email" placeholder="Your email address.." name="email" required>
+         </div>         
+         <div class="input-group">
+           <label for="message">Message:</label>
+           <textarea id="message" rows="6" placeholder="Your message.." name="message" required></textarea>
+         </div>         
          <button type="submit">Submit</button>
        </form>
       </section>
@@ -151,6 +158,20 @@
                    </div>
                  </div>
        </footer>
-       <script src="JS/script.js"></script>
+       <script src="../js/scripts.js"></script>
+       <div id="thankYouModal" class="custom-modal">
+         <div class="modal-content">
+           <h3 id="modalGreeting">Thank you!</h3>
+           <p>Your message has been sent to the Mythos Cradle Sanctuary. We will be in contact with you shortly!</p>
+           <button class="modal-close-btn" onclick="closeModal()">OK</button>
+         </div>
+       </div>
+       <div id="checkoutModal" class="custom-modal">
+         <div class="modal-content">
+           <h3>Adoption Processing!</h3>
+           <p>Thank you for choosing to adopt! Proceeding to the mythical processing sanctuary...</p>
+           <button class="modal-close-btn" onclick="closeCheckoutModal()">OK</button>
+         </div>
+       </div>
    </body>
  </html>

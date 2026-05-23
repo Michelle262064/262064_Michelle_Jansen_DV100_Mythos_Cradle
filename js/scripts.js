@@ -160,10 +160,20 @@ function checkoutAlert() {
     alert("Your Cradle is empty!");
     return;
   }
-  alert("Thank you for choosing to adopt! Proceeding to the mythical processing sanctuary...");
+  const modal = document.getElementById('checkoutModal');
+  if (modal) {
+    modal.classList.add('show');
+  }
   cart = [];
   saveCartAndRefresh();
-  toggleCart(false);
+  toggleCart(false); 
+}
+
+function closeCheckoutModal() {
+  const modal = document.getElementById('checkoutModal');
+  if (modal) {
+    modal.classList.remove('show');
+  }
 }
 
 
@@ -184,11 +194,26 @@ document.addEventListener('DOMContentLoaded', () => {
 //form logic//
 function handleFormSubmit(event) {
   event.preventDefault();
+
   const usernameInput = document.getElementById('username');
-    const form = document.getElementById('contactForm');
+  const form = document.getElementById('contactForm');
+  const modal = document.getElementById('thankYouModal');
+  const modalGreeting = document.getElementById('modalGreeting');
     
-    if (!usernameInput || !form) return;
-    const username = usernameInput.value.trim();
-    alert(`Thank you, ${userName}! Your message has been sent to the Mythos Cradle Sanctuary. We will be in contact with you shortly!`);
-    form.reset();
+    
+  if (!usernameInput || !form || !modal) return;
+  const username = usernameInput.value.trim();
+
+  if (modalGreeting) {
+    modalGreeting.textContent = `Thank you, ${username}!`;
+  }
+  modal.classList.add('show');
+  form.reset();
+}
+
+function closeModal() {
+    const modal = document.getElementById('thankYouModal');
+    if (modal) {
+        modal.classList.remove('show');
+    }
 }
