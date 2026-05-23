@@ -181,4 +181,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
+//form logic//
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const usernameInput = document.getElementById('username');
+    const form = document.getElementById('contactForm');
+    
+    if (!usernameInput || !form) return;
+    const username = usernameInput.value.trim();
+    alert(`Thank you, ${userName}! Your message has been sent to the Mythos Cradle Sanctuary. We will be in contact with you shortly!`);
+    form.reset();
+}
