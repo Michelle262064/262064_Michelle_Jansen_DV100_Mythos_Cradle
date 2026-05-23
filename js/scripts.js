@@ -72,20 +72,47 @@ function setupAddToCartListeners() {
 
       const id = productSection.getAttribute('data-id');
       
-      const titleElement = productSection.querySelector('h1, h2');
+      const titleElement = productSection.querySelector('h1, h2, current-price, price-sp');
       const title = titleElement ? titleElement.textContent.trim() : 'Unknown Creature';
-      
-      const priceElement = productSection.querySelector('.current-price, .price-sp');
+      const priceElement = productSection.querySelector('.current-price, .price-sp, p');
+
       let price = 0;
-      if (priceElement) {
-        price = parseFloat(priceElement.textContent.replace(/[^0-9.]/g, '')) || 0;
+
+      const allParagraphs = productSection.querySelectorAll('p');
+      let foundPriceText = '';
+      
+      allParagraphs.forEach(p => {
+        if (p.textContent.trim().startsWith('R')) {
+          foundPriceText = p.textContent;
+        }
+      });
+
+      if (!foundPriceText && priceElement) {
+        foundPriceText = priceElement.textContent;
       }
+
+      if (foundPriceText) {
+        let cleanPrice = foundPriceText.replace(/\s/g, '').replace(',', '.');
+        price = parseFloat(cleanPrice.replace(/[^0-9.]/g, '')) || 0;
+      }
+
+      const qtyElement = productSection.querySelector('.qty-box, .qty-box2, [class*="qty"]');
+      let quantity = 1;
+      if (qtyElement) {
+        quantity = parseInt(qtyElement.textContent) || 1;
+      } else {
+        const midBtn = productSection.querySelector('.qty-control, div');
+        if (midBtn) quantity = parseInt(midBtn.textContent) || 1;
+      }
+      addToCart(id, title, price, quantity);
+
+      if (qtyElement) qtyElement.textContent = "1";
       const qtyElement = productSection.querySelector('.qty-box, .qty-box2');
       let quantity = parseInt(qtyElement.textContent) || 1;
 
       addToCart(id, title, price, quantity);
 
-      if (qtyElement) qtyBox.textContent = "1";
+      if (qtyElement) qtyElement.textContent = "1";
     });
   });
 }
