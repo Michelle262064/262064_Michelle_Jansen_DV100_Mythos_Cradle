@@ -830,7 +830,6 @@ html {
     font-weight: bold !important;
     width: 35px !important;
     height: 40px !important; 
-    cursor: pointer !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -838,6 +837,7 @@ html {
     padding: 0 0 3px 0 !important; 
     user-select: none !important;
     margin: 0 !important;
+    cursor: pointer !important;
 }
 
 .qty-control .qty-btn-minus {
@@ -911,7 +911,7 @@ html {
     padding: 0 25px !important;
     border-radius: 5px;
     font-weight: bold;
-    cursor: pointer;
+    cursor: pointer !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
