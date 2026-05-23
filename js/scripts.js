@@ -10,7 +10,7 @@ function navigateToProduct() {
     return;
   }
 
-  window.location.href = `pages/adopt.html?search=${encodeURIComponent(query)}`;
+  window.location.href = `adopt.html?search=${encodeURIComponent(query)}`;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
