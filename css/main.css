@@ -713,13 +713,14 @@ html {
 
 .price-sp {
     color: var(--bright-cyan);
-    font-weight: bold;
+    font-weight: normal;
     font-size: 14pt;
 }
 
 .product-info-sp p {
-    font-size: 14pt;
-    margin-bottom: 15px;
+    font-size: 16pt;
+    margin-bottom: 14px;
+    font-weight: normal;
 }
 
 
@@ -733,17 +734,24 @@ html {
     font-weight: bold;
 }
 
+.product-info p {
+    font-size: 16pt;
+    margin-bottom: 14px;
+    font-weight: normal;
+}
+
+
 /*--Reviews and Price--*/
 .old-price {
     text-decoration: line-through;
-    color: rgba(0,0,0,0.15);
+    color: rgba(0, 0, 0, 0.300);
     margin-right: 10px;
     font-size: 14pt;
 }
 
 .current-price {
-    color: var(--text-primary-black);
-    font-weight: bold;
+    color: rgba(0, 0, 0, 0.600);
+    font-weight: normal;
     font-size: 16pt;
 
 }
@@ -756,8 +764,15 @@ html {
 }
 
 .review-status {
-    color: rgba(0,0,0,0.4);
-    font-weight: bold;
+    color: rgba(225, 225, 225, 0.600);
+    font-weight: normal;
+    font-size: 14pt;
+}
+
+.review-status1 {
+    color: rgba(0, 0, 0, 0.600);
+    font-weight: normal;
+    font-size: 14pt;
 }
 
 .reviews {
@@ -767,13 +782,7 @@ html {
     justify-content: flex-start;
 }
 
-.review-line span {
-    justify-content: flex-end;
-    width: 50px;
-    height: 3px;
-    background-color: var(--text-primary-white);
-    margin-bottom: 15px;
-}
+
 
 /*--controls--*/
 
@@ -810,7 +819,7 @@ html {
     margin-right: 15px !important;
 }
 
-.qty-btn-minus, .qty-btn-minnus, .qty-btn-plus {
+.qty-btn-minus, .qty-btn-plus {
     line-height: 1 !important;
     padding: 0 0 3px 0 !important; 
 }
@@ -1277,4 +1286,37 @@ footer {
 
 .checkout-btn:hover {
   background-color: #e0a200 !important;
+}
+
+.creature-specs {
+    margin-top: 25px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.8 !important; 
+}
+
+.creature-specs p {
+    margin: 4px 0 !important;
+    font-weight: normal !important;
+}
+
+.creature-specs p strong {
+    display: inline-block !important;
+    font-weight: 500 !important;
+}
+
+.specs-white p strong {
+    color: rgba(0, 0, 0, 0.7) !important; 
+}
+
+.specs-white p span {
+    color: rgba(0, 0, 0, 0.5) !important; 
+}
+
+.specs-blue p strong {
+    color: rgba(255, 255, 255, 0.7) !important; /* Soft white label */
+}
+
+.specs-blue p span {
+    color: rgba(255, 255, 255, 0.5) !important; /* Elegant translucent white details text */
 }

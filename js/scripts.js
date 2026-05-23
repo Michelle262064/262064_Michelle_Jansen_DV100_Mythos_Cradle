@@ -9,10 +9,9 @@ function navigateToProduct() {
         return;
     }
 
-    // FIXED: The leading slash (/) forces the browser to go back to the root folder first
-    // This works perfectly from index.html, about.html, or even a broken page!
     window.location.href = `/pages/about.html?search=${encodeURIComponent(query)}`;
 }
+
 window.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('creatureSearch');
   if (searchInput) {
@@ -26,7 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //cart logic//
 
-//cart memory
 let cart = JSON.parse(localStorage.getItem('myCradleCart')) || [];
 
 //setup hooks
