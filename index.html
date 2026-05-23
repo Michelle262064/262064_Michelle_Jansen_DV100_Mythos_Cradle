@@ -35,12 +35,27 @@
            <a href="pages/contact.html">Contact Us</a>
          </nav>
          <div class="search-container">
-           <input type="text" id="creatureSearch" placeholder="Search creatures (e.g., Yuki, Azuron)...">
+           <input type="text" id="creatureSearch" placeholder="Search creatures..">
            <button id="searchButton" onclick="navigateToProduct()">Search</button>
+           <button id="cartToggleBtn" onclick="toggleCart()">🛒 Cradle (<span id="cartCount">0</span>)</button>
            <div id="errorMessage" style="display: none; color: #ff4d4d; margin-top: 5px; font-size: 14px;"></div>
          </div>
         </div>
      </header>
+     <div id="cartDrawer" class="cart-drawer">
+       <div class="cart-header">
+         <h2>Your Cradle</h2>
+         <button class="close-cart-btn" onclick="toggleCart()">×</button>
+       </div>
+       <div id="cartItemsContainer" class="cart-items-container"></div>
+       <div class="cart-footer">
+         <div class="cart-total-row">
+           <span>Total:</span>
+           <span id="cartTotalValue">R0.00</span>
+         </div>
+         <button class="checkout-btn" onclick="checkoutAlert()">Adopt All</button>
+       </div>
+     </div>
 
      <!--Hero Banner-->
      <section class="hero">

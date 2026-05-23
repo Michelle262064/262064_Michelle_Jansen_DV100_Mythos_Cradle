@@ -22,8 +22,8 @@
    </head>
    <body class="adopt-page">
      <header>
-         <div class="navbar">
-           <a href="../index.html" class="logo">
+        <div class="navbar">
+          <a href="../index.html" class="logo">
              <img src="../assets/images/logo.png" alt="logo-link">
            </a>
            <nav class="nav-links">
@@ -32,13 +32,27 @@
              <a href="../pages/contact.html">Contact Us</a>
            </nav>
            <div class="search-container">
-             <input type="text" id="creatureSearch" placeholder="Search creatures (e.g., Yuki, Azuron)...">
+             <input type="text" id="creatureSearch" placeholder="Search creatures..">
              <button id="searchButton" onclick="navigateToProduct()">Search</button>
+             <button id="cartToggleBtn" onclick="toggleCart()">🛒 Cradle (<span id="cartCount">0</span>)</button>
              <div id="errorMessage" style="display: none; color: #ff4d4d; margin-top: 5px; font-size: 14px;"></div>
            </div>
+        </div>
+      </header>
+       <div id="cartDrawer" class="cart-drawer">
+         <div class="cart-header">
+           <h2>Your Cradle</h2>
+           <button class="close-cart-btn" onclick="toggleCart()">×</button>
          </div>
-       </header>
-
+         <div id="cartItemsContainer" class="cart-items-container"></div>
+         <div class="cart-footer">
+           <div class="cart-total-row">
+             <span>Total:</span>
+             <span id="cartTotalValue">R0.00</span>
+           </div>
+           <button class="checkout-btn" onclick="checkoutAlert()">Adopt All</button>
+         </div>
+       </div>
      <!--Header-->
      <header class="adopt-hero">
        <h1>Adopt A Creature</h1>
@@ -87,9 +101,11 @@
                 </div>
                 <p class="p1">Azuron is a curious little dragon with a spark of mischief in his eyes. He loves exploring hidden nooks and curlings up in warm spots after a playful flight, leaving tiny trails of blue sparks wherever he goes. He thrives on attention and gentle play, and his favorite games involve chasing floating spark orbs around the room.</p>
                 <div class="qty-control">
-                    <span class="qty-box">- 1 +</span>
-                    <button class="add-to-cart-btn">Add to Cradle</button>
+                    <button class="qty-btn-minus">-</button>
+                    <span class="qty-box">1</span>
+                    <button class="qty-btn-plus">+</button>
                  </div>
+                  <button class="add-to-cart-btn">Add to Cradle</button>
                   <ul>
                      <li>Bed : Cozy lava-foam bed</li>
                      <li>Treats : Frostberry treats</li>
@@ -111,9 +127,11 @@
                 </div>
                  <p class="p2">Yuki is a mischievous yet loving fox spirit, full of curiosity and clever ideas. She delights in playful tricks and quietly watching over her friends, her tail swishes with commitment. Yuki especially enjoys interactive games and hiding small trinkets to surprise her caretakers</p>
                  <div class="qty-control-sp">
-                    <span class="qty-box2">- 1 +</span>
-                    <button class="add-to-cart-btn">Add to Cradle</button>
+                    <button class="qty-btn-minus">-</button>
+                    <span class="qty-box2">1</span>
+                    <button class="qty-btn-plus">+</button>
                   </div>
+                  <button class="add-to-cart-btn">Add to Cradle</button>
                   <ul>
                     <li>Bed : Silk-lined den bed</li>
                     <li>Treats : Moonfruit snacks</li>
@@ -135,9 +153,11 @@
                 </div>
                <p class="p1">Aurelia is a proud little griffin, courageous yet gentle. She loves climbing, exploring high perches, and curling up near those -she trusts, always watching the world with wise golden eyes. She adores gentle games of chase and loves to show off ner tiny but majestic wings.</p>
                <div class="qty-control">
-                  <span class="qty-box">- 1 +</span>
-                  <button class="add-to-cart-btn">Add to Cradle</button>
-               </div>
+                    <button class="qty-btn-minus">-</button>
+                    <span class="qty-box">1</span>
+                    <button class="qty-btn-plus">+</button>
+                 </div>
+                 <button class="add-to-cart-btn">Add to Cradle</button>
                <ul>
                  <li>Bed : Feathered-lined perch bed</li>
                  <li>Treats : Sunfruit treats</li>
@@ -159,9 +179,11 @@
                    </div>
                    <p class="p2">Lumina drifts like a shimmer of moonlight, soft and gentle. Playful and curious, she glides through her surroundings, bringing calm and quiet magic wherever she goes. She loves to follow gentle ripples in water or light games, leaving a taint glowing trail that enchants everyone nearby.</p>
                    <div class="qty-control-sp">
-                      <span class="qty-box2">- 1 +</span>
-                      <button class="add-to-cart-btn">Add to Cradle</button>
-                   </div>
+                     <button class="qty-btn-minus">-</button>
+                     <span class="qty-box2">1</span>
+                     <button class="qty-btn-plus">+</button>
+                  </div>
+                  <button class="add-to-cart-btn">Add to Cradle</button>
                    <ul>
                       <li>Bed : Crystal bowl bed</li>
                       <li>Treats : Dewdrop nectar</li>
@@ -183,9 +205,11 @@
                 </div>
                <p class="p1">Starwind is a gentle, curious Pegasus foal with a playful spirit. He loves short flights and sunny naps, his gleaming wings always ready for discovery. He enjoys small games of chase and nuzzles to snow affection, quickly forming strong bonds with those he trusts.</p>
                <div class="qty-control">
-                  <span class="qty-box">- 1 +</span>
-                  <button class="add-to-cart-btn">Add to Cradle</button>
-               </div>
+                    <button class="qty-btn-minus">-</button>
+                    <span class="qty-box">1</span>
+                    <button class="qty-btn-plus">+</button>
+                 </div>
+                 <button class="add-to-cart-btn">Add to Cradle</button>
                <ul>
                  <li>Bed : Soft cloud bed</li>
                  <li>Treats : Starhay treats</li>
@@ -206,9 +230,11 @@
                 </div>
                    <p class="p2">Briar is a tiny guardian of the woods, curious, gentle, and full of life. He loves leafy hideaways and quietly exploring gardens, always humming with a touch of magic. He enjoys collecting small natural treasures and bringing them to his caretakers as gifts, showing his playful personality.</p>
                    <div class="qty-control-sp">
-                      <span class="qty-box2">- 1 +</span>
-                      <button class="add-to-cart-btn">Add to Cradle</button>
+                     <button class="qty-btn-minus">-</button>
+                     <span class="qty-box2">1</span>
+                     <button class="qty-btn-plus">+</button>
                    </div>
+                   <button class="add-to-cart-btn">Add to Cradle</button>
                    <ul>
                       <li>Bed : Mossy bed</li>
                       <li>Treats : Berry treats</li>
@@ -232,8 +258,8 @@
                <div class="footer-mid">
                  <h5>Company</h5>
                  <a href="../index.html">Home</a>
-                 <a href="about.html">Adopt</a>
-                 <a href="contact.html">Contact Us</a>
+                 <a href="../pages/about.html">Adopt</a>
+                 <a href="./pages/contact.html">Contact Us</a>
                </div>
                <div class="footer-right">
                  <h6>Social Media Links</h6>
@@ -260,6 +286,7 @@
                    </div>
                  </div>
        </footer>
+       <script src="../js/scripts.js"></script>
        <script>
           window.addEventListener('DOMContentLoaded', () => {
            const urlParams = new URLSearchParams(window.location.search);
