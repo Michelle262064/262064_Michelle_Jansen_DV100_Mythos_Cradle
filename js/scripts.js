@@ -78,14 +78,18 @@ function setupAddToCartListeners() {
       const priceElement = productSection.querySelector('.current-price, .price-sp');
       let price = 0;
       if (priceElement) {
-        price = parseFloat(priceElement.textContent.replace(/[^0-9.]/g, '')) || 0;
+
+       let priceText = priceElement.textContent.replace(/\s+/g, '');
+       priceText = priceText.replace(',', '.');
+       priceText = priceText.replace(/[^0-9.]/g, '');
+       price = parseFloat(priceText) || 0;
       }
       const qtyElement = productSection.querySelector('.qty-box, .qty-box2');
       let quantity = parseInt(qtyElement.textContent) || 1;
 
       addToCart(id, title, price, quantity);
 
-      if (qtyElement) qtyBox.textContent = "1";
+      if (qtyElement) qtyElement.textContent = "1";
     });
   });
 }
@@ -180,15 +184,34 @@ function closeCheckoutModal() {
 //carousel//
 document.addEventListener('DOMContentLoaded', () => {
   const items = document.querySelectorAll(".carousel-item");
+  const nextBtn = document.querySelector(".carousel-control-next, .right-arrow");
+  const prevBtn = document.querySelector(".carousel-control-prev, .left-arrow");
+
   if (items.length > 0) {
     let index = 0;
+
     const showSlide = (newIndex) => {
       items[index].classList.remove("active");
       index = (newIndex + items.length) % items.length;
       items[index].classList.add("active");
     };
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        showSlide(index + 1);
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        showSlide(index - 1);
+      });
+    }
   }
 });
+
+
+
+
 
 
 //form logic//
