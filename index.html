@@ -34,6 +34,7 @@
            <a href="pages/about.html">Adopt</a>
            <a href="pages/contact.html">Contact Us</a>
          </nav>
+         
          <div class="search-container">
            <input type="text" id="creatureSearch" placeholder="Search creatures..">
            <button id="searchButton" onclick="navigateToProduct()">Search</button>
@@ -42,19 +43,23 @@
          </div>
         </div>
      </header>
+
      <div id="cartDrawer" class="cart-drawer">
        <div class="cart-header">
          <h2>Your Cradle</h2>
          <button class="close-cart-btn" onclick="toggleCart()">×</button>
        </div>
+
        <div id="cartItemsContainer" class="cart-items-container"></div>
        <div class="cart-footer">
          <div class="cart-total-row">
            <span>Total:</span>
            <span id="cartTotalValue">R0.00</span>
          </div>
+
          <button class="checkout-btn" onclick="checkoutAlert()">Adopt All</button>
        </div>
+
      </div>
 
      <!--Hero Banner-->
@@ -68,7 +73,8 @@
      <!--Slider Section-->
      <section id="about" class="feature-dark">
        <div id="carouselExampleFade" class="carousel slide carousel-fade">
-         <div class="carousel-inner">
+         
+        <div class="carousel-inner">
            <div class="carousel-item active">
              <img src="assets/images/imageSlider1.png" class="d-block w-100" alt="slide1">
            </div>
@@ -79,14 +85,17 @@
              <img src="assets/images/adopt5.png" class="d-block w-100" alt="slide3">
            </div>
          </div>
+
          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
            <span class="visually-hidden">Previous</span>
          </button>
+
          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
            <span class="carousel-control-next-icon" aria-hidden="true"></span>
            <span class="visually-hidden">Next</span>
          </button>
+
        </div>
        <div class="content-column">
          <p1>BEGIN YOUR JOURNEY</p1>

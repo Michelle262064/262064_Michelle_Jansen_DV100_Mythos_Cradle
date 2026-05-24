@@ -1,4 +1,4 @@
-/*Global styling & font families*/
+/*-Global styling & font families*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,6 +19,7 @@
     --text-primary-black: #000000;
 }
 
+/*-global body styling-*/
 body {
     overflow-x: hidden;
     width: 100%;
@@ -28,7 +29,7 @@ body {
     padding: 0;
 }
 
-/* Navbar*/
+/*-Navbar-*/
 .navbar {
     position: fixed !important;
     top: 20px; 
@@ -126,7 +127,7 @@ body {
 #searchButton {
   padding: 8px 14px;
   font-size: 14px;
-  background-color:var(--accent-yellow);
+  background-color:var(--bright-cyan);
   color: var(--text-primary-white);
   border: none;
   border-radius: 20px;
@@ -136,7 +137,7 @@ body {
 }
 
 #searchButton:hover {
-  background-color: var(--bright-cyan);
+  background-color: var(--accent-yellow);
 }
 
 html {
@@ -251,16 +252,17 @@ html {
 .checkout-btn {
   width: 100%;
   padding: 12px;
-  background-color: #ffb800;
+  background-color: var(--accent-yellow) !important;
   color: white;
   border: none;
   border-radius: 6px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s
 }
 .checkout-btn:hover { 
-    background-color: #e0a200; 
+    background: var(--bright-cyan) !important;
 }
 
 /*--Hero section--*/
@@ -339,13 +341,12 @@ html {
   object-fit: cover; 
 }
 
-.carousel-control-prev,
-.carousel-control-next {
+.carousel-control-prev, .carousel-control-next {
   position: absolute;
   top: 50% !important;
   transform: translateY(-50%);
   width: 50px;
-  height: 50px !important; /* Overrides full-height stretching */
+  height: 50px !important; 
   opacity: 0.85;
   transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 5;
@@ -388,23 +389,6 @@ html {
     align-items: flex-start !important;
     width: 100%;
 
-}
-
-.btn-primary {
-    text-decoration: none !important;
-    background-color: #15d5f5;
-    color: white;
-    border: none;
-    padding: 26px 40px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: 19px;
-}
-
-.btn-primary:hover {
-    background-color: #e9ad1c;
 }
 
 /*--Info Section--*/
@@ -490,7 +474,7 @@ html {
   display: block;
 }
 
-/*--Cards Section--*/
+/*--Previous friends--*/
 .cards-section-container {
     background-color: var(--primary-blue);
     width: 100%;
@@ -538,7 +522,7 @@ html {
     transform: translateY(-10px); 
 }
 
-/*--Content Card--*/
+/*--Content for creatures--*/
 .card img {
     width: 260px;
     height: 260px;
@@ -782,10 +766,9 @@ html {
     justify-content: flex-start;
 }
 
-
-
 /*--controls--*/
 
+/*--counters--*/
 .product-info, .product-info-sp {
     display: flex !important;
     flex-direction: column !important;
@@ -1221,7 +1204,7 @@ footer {
 .close-cart-btn {
   background: none !important;
   border: none !important;
-  font-size: 32px !important; /* Large, clickable size */
+  font-size: 32px !important; 
   font-weight: 300 !important;
   color: var(--text-primary-black) !important;
   cursor: pointer !important;
@@ -1379,7 +1362,7 @@ footer {
 #modalGreeting {
   margin: 0 0 10px 0 !important;
   font-size: 22px !important;
-  color: #001a4d !important; /* Theme blue color match */
+  color: var(--primary-blue) !important; 
 }
 
 .modal-content p {
@@ -1488,7 +1471,7 @@ footer {
 
 
 .form-submit-btn:hover {
-    background-color: var(--primary-blue)!important;
+    background-color: var(--accent-yellow)!important;
 }
 
 .form-submit-btn:active {

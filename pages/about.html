@@ -13,6 +13,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
       
       <title>The Mythos Cradle</title>
@@ -26,11 +27,13 @@
           <a href="../index.html" class="logo">
              <img src="../assets/images/logo.png" alt="logo-link">
            </a>
+
            <nav class="nav-links">
              <a href="../index.html">Home</a>
              <a href="../pages/about.html">Adopt</a>
              <a href="../pages/contact.html">Contact Us</a>
            </nav>
+
            <div class="search-container">
              <input type="text" id="creatureSearch" placeholder="Search creatures..">
              <button id="searchButton" onclick="navigateToProduct()">Search</button>
@@ -39,11 +42,13 @@
            </div>
         </div>
       </header>
+
        <div id="cartDrawer" class="cart-drawer">
          <div class="cart-header">
            <h2>Your Cradle</h2>
            <button class="close-cart-btn" onclick="toggleCart()">×</button>
          </div>
+
          <div id="cartItemsContainer" class="cart-items-container"></div>
          <div class="cart-footer">
            <div class="cart-total-row">
@@ -53,14 +58,17 @@
            <button class="checkout-btn" onclick="checkoutAlert()">Adopt All</button>
          </div>
        </div>
+
      <!--Header-->
      <header class="adopt-hero">
        <h1>Adopt A Creature</h1>
      </header>
+
      <section class="adopt-sub-hero">
        <h2>Your journey with a little legend starts here.</h2>
        <p>Adopting a little legend doesn't cost a thing - our focus is finding loving homes. We want to make their arrival extra special, so you can choose optional starter packages made just for your creature: tiny beds, treats, toys, and more. You can even get multiple packages if your legend will have indoor and outdoor spaces. After you complete your application, we'll arrange a magical meeting so you can see which creature is the perfect fit. We've also included a beginners friendly rating with our creatures so that you can gauge if you are ready to make them apart of your family.</p>
      </section>
+
      <!-- Mustard Filter Bar -->
      <div class="filter-bar">
           <div class="filter-left">
@@ -70,9 +78,11 @@
              <span>Tiles</span>
              <div class="divider-line"></div>
            </div>
+
            <div class="center-section">
              <span><p>Showing 1-6 of 30 results</p></span>
            </div>
+
            <div class="filter-right">
              <span>Show</span>
              <button class="btn-sp" type="button">6</button>
@@ -84,7 +94,9 @@
              </select>
             </div>
        </div>   
+
        <!--Product Sections (Alternating)-->
+       <!--Azuron-->
        <section class="products" id="product-list">
          <section class="product-page-white" data-id="1">
             <img src="../assets/images/adopt1.png" class="product-image">
@@ -94,17 +106,22 @@
                    <del class="old-price">R5000.00</del>
                    <span class="current-price">R2500.00</span>
                 </div>
+
                 <div class="rating-row">
                    <div class="reviews">★★★</div>
                    <span class="review-status1">Friendly Ally</span>
                 </div>
+
                 <p class="p1">Azuron is a curious little dragon with a spark of mischief in his eyes. He loves exploring hidden nooks and curlings up in warm spots after a playful flight, leaving tiny trails of blue sparks wherever he goes. He thrives on attention and gentle play, and his favorite games involve chasing floating spark orbs around the room.</p>
+                
                 <div class="qty-control">
                     <button class="qty-btn-minus">-</button>
                     <span class="qty-box">1</span>
                     <button class="qty-btn-plus">+</button>
                  </div>
+
                   <button class="add-to-cart-btn">Add to Cradle</button>
+                  
                   <div class="creature-specs specs-white">
                      <p><strong>Bed</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Cozy lava-foam bed</span></p>
                      <p><strong>Treats</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Frostberry treats</span></p>
@@ -114,6 +131,7 @@
                </div>
           </section>
 
+          <!--Kitsune-->
           <section class="product-page-darkblue" data-id="2">
              <img src="../assets/images/adopt2.png" class="product-image">
                <div class="product-info-sp">
@@ -123,13 +141,17 @@
                    <div class="reviews">★★★★</div>
                    <span class="review-status">Gentle Guardian</span>
                 </div>
+
                  <p class="p2">Yuki is a mischievous yet loving fox spirit, full of curiosity and clever ideas. She delights in playful tricks and quietly watching over her friends, her tail swishes with commitment. Yuki especially enjoys interactive games and hiding small trinkets to surprise her caretakers</p>
+                 
                  <div class="qty-control-sp">
                     <button class="qty-btn-minus">-</button>
                     <span class="qty-box2">1</span>
                     <button class="qty-btn-plus">+</button>
                   </div>
+                  
                   <button class="add-to-cart-btn">Add to Cradle</button>
+                  
                   <div class="creature-specs specs-blue">
                     <p><strong>Bed</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Silk-lined den bed</span></p>
                      <p><strong>Treats</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Moonfruit snacks</span></p>
@@ -139,31 +161,37 @@
               </div>
            </section>
 
+           <!--Aurelia-->
            <section class="product-page-white" data-id="3">
              <img src="../assets/images/adopt3.png" class="product-image">
              <div class="product-info">
                <h1>Griffin - Aurelia</h1>
-               <p class="price">R6 500.00</p>
+               <p class="current-price">R6 500.00</p>
                <div class="rating-row">
                    <div class="reviews">★★★</div>
                    <span class="review-status1">Friendly Ally</span>
                 </div>
+                
                <p class="p1">Aurelia is a proud little griffin, courageous yet gentle. She loves climbing, exploring high perches, and curling up near those -she trusts, always watching the world with wise golden eyes. She adores gentle games of chase and loves to show off ner tiny but majestic wings.</p>
+               
                <div class="qty-control">
-                    <button class="qty-btn-minus">-</button>
-                    <span class="qty-box">1</span>
-                    <button class="qty-btn-plus">+</button>
-                 </div>
+                 <button class="qty-btn-minus">-</button>
+                 <span class="qty-box">1</span>
+                 <button class="qty-btn-plus">+</button>
+               </div>
+                
                  <button class="add-to-cart-btn">Add to Cradle</button>
-               <div class="creature-specs specs-white">
-                  <p><strong>Bed</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Feather-lined perch bed</span></p>
-                  <p><strong>Treats</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Sunfruit treats</span></p>
-                  <p><strong>Toys</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Wing rings, Soft talon toys, Mini prey plushies</span></p>
-                  <p><strong>Unique Item</strong> : <span>Tiny Sunstone Perch</span></p>
+               
+                 <div class="creature-specs specs-white">
+                   <p><strong>Bed</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Feather-lined perch bed</span></p>
+                   <p><strong>Treats</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Sunfruit treats</span></p>
+                   <p><strong>Toys</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Wing rings, Soft talon toys, Mini prey plushies</span></p>
+                   <p><strong>Unique Item</strong> : <span>Tiny Sunstone Perch</span></p>
                 </div>
              </div>
            </section>
 
+           <!--Lumina-->
            <section class="product-page-darkblue" data-id="4">
                <img src="../assets/images/adopt4.png" class="product-image">
                <div class="product-info-sp">
@@ -173,14 +201,18 @@
                       <div class="reviews">★★★★★</div>
                       <span class="review-status">Beloved Companion</span>
                    </div>
+
                    <p class="p2">Lumina drifts like a shimmer of moonlight, soft and gentle. Playful and curious, she glides through her surroundings, bringing calm and quiet magic wherever she goes. She loves to follow gentle ripples in water or light games, leaving a taint glowing trail that enchants everyone nearby.</p>
+                   
                    <div class="qty-control-sp">
                      <button class="qty-btn-minus">-</button>
                      <span class="qty-box2">1</span>
                      <button class="qty-btn-plus">+</button>
                   </div>
+                  
                   <button class="add-to-cart-btn">Add to Cradle</button>
-                   <div class="creature-specs specs-blue">
+                  
+                  <div class="creature-specs specs-blue">
                      <p><strong>Bed</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Crystal bowl bed</span></p>
                      <p><strong>Treats</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Dewdrop nectar</span></p>
                      <p><strong>Toys</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Floating orbs, Ripple rings, Water bell</span></p>
@@ -189,31 +221,38 @@
                  </div>
              </section>
 
+             <!--Starwind-->
              <section class="product-page-white" data-id="5">
-             <img src="../assets/images/adopt5.png" class="product-image">
-             <div class="product-info">
-               <h2>Pegasus - Starwind</h2>
-               <p class="price">R5 000.00</p>
-               <div class="rating-row">
-                   <div class="reviews">★★★★</div>
-                   <span class="review-status1">Gentle Guardian</span>
-                </div>
-               <p class="p1">Starwind is a gentle, curious Pegasus foal with a playful spirit. He loves short flights and sunny naps, his gleaming wings always ready for discovery. He enjoys small games of chase and nuzzles to snow affection, quickly forming strong bonds with those he trusts.</p>
-               <div class="qty-control">
-                    <button class="qty-btn-minus">-</button>
-                    <span class="qty-box">1</span>
-                    <button class="qty-btn-plus">+</button>
+               <img src="../assets/images/adopt5.png" class="product-image">
+               <div class="product-info">
+                 <h2>Pegasus - Starwind</h2>
+                 <p class="current-price">R5 000.00</p>
+                  <div class="rating-row">
+                    <div class="reviews">★★★★</div>
+                    <span class="review-status1">Gentle Guardian</span>
                  </div>
+               
+                 <p class="p1">Starwind is a gentle, curious Pegasus foal with a playful spirit. He loves short flights and sunny naps, his gleaming wings always ready for discovery. He enjoys small games of chase and nuzzles to snow affection, quickly forming strong bonds with those he trusts.</p>
+               
+                 <div class="qty-control">
+                   <button class="qty-btn-minus">-</button>
+                   <span class="qty-box">1</span>
+                   <button class="qty-btn-plus">+</button>
+                 </div>
+                
                  <button class="add-to-cart-btn">Add to Cradle</button>
-               <div class="creature-specs specs-white">
-                 <p><strong>Bed</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Soft cloud bed</span></p>
-                 <p><strong>Treats</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Starhay treats</span></p>
-                 <p><strong>Toys</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Flying hoops, Feathered balls, Small riding saddle</span></p>
-                 <p><strong>Unique Item</strong> : <span>Mini Wind Hoof Ball</span></p>
-                </div>   
-             </div>
-           </section>
-           <section class="product-page-darkblue" data-id="6">
+              
+                 <div class="creature-specs specs-white">
+                   <p><strong>Bed</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Soft cloud bed</span></p>
+                   <p><strong>Treats</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Starhay treats</span></p>
+                   <p><strong>Toys</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Flying hoops, Feathered balls, Small riding saddle</span></p>
+                   <p><strong>Unique Item</strong> : <span>Mini Wind Hoof Ball</span></p>
+                 </div>   
+               </div>
+             </section>
+
+             <!--Azuron-->
+             <section class="product-page-darkblue" data-id="6">
                <img src="../assets/images/adopt6.png" class="product-image">
                <div class="product-info-sp">
                    <h2>Forest Spirit - Briar</h2>
@@ -221,23 +260,30 @@
                    <div class="rating-row">
                    <div class="reviews">★★★★★</div>
                    <span class="review-status">Beloved Companion</span>
-                </div>
-                   <p class="p2">Briar is a tiny guardian of the woods, curious, gentle, and full of life. He loves leafy hideaways and quietly exploring gardens, always humming with a touch of magic. He enjoys collecting small natural treasures and bringing them to his caretakers as gifts, showing his playful personality.</p>
-                   <div class="qty-control-sp">
-                     <button class="qty-btn-minus">-</button>
-                     <span class="qty-box2">1</span>
-                     <button class="qty-btn-plus">+</button>
-                   </div>
-                   <button class="add-to-cart-btn">Add to Cradle</button>
-                   <div class="creature-specs specs-blue">
-                     <p><strong>Bed</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Mossy bed</span></p>
-                     <p><strong>Treats</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Berry Treats</span></p>
-                     <p><strong>Toys</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Twig rattles, Leaf dolls, Acorn balls</span></p>
-                     <p><strong>Unique Item</strong> : <span>Mini Leafy Hideout</span></p>
-                   </div>
+                 </div>
+                  
+                 <p class="p2">Briar is a tiny guardian of the woods, curious, gentle, and full of life. He loves leafy hideaways and quietly exploring gardens, always humming with a touch of magic. He enjoys collecting small natural treasures and bringing them to his caretakers as gifts, showing his playful personality.</p>
+                  
+                 <div class="qty-control-sp">
+                   <button class="qty-btn-minus">-</button>
+                   <span class="qty-box2">1</span>
+                   <button class="qty-btn-plus">+</button>
+                 </div>
+                 
+                 <button class="add-to-cart-btn">Add to Cradle</button>
+                 
+                 <div class="creature-specs specs-blue">
+                   <p><strong>Bed</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Mossy bed</span></p>
+                   <p><strong>Treats</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Berry Treats</span></p>
+                   <p><strong>Toys</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span>Twig rattles, Leaf dolls, Acorn balls</span></p>
+                   <p><strong>Unique Item</strong> : <span>Mini Leafy Hideout</span></p>
+                 </div>
              </section>
+             
+             <!--"cradle a legend btn"-->
              <a href="../pages/contact.html" class="btn-primary" type="button">Cradle a legend</a>
          </section>  
+
              <!-- Footer -->
              <footer>
                <div class="container-split">
@@ -248,12 +294,14 @@
                    <p>Where every legendary creature finds a loving home.</p>
                  </div>
                </div>
+
                <div class="footer-mid">
                  <h5>Company</h5>
                  <a href="../index.html">Home</a>
                  <a href="../pages/about.html">Adopt</a>
                  <a href="./pages/contact.html">Contact Us</a>
                </div>
+
                <div class="footer-right">
                  <h6>Social Media Links</h6>
                  <div class="social-container">
@@ -271,6 +319,7 @@
                      </a>
                    </div>
                </div>
+
                <div class="footer-bottom">
                    <span>All Rights Reserved &Open Window 2024</span>
                    <div class="legal-links">
@@ -279,7 +328,9 @@
                    </div>
                  </div>
        </footer>
+
        <script src="../js/scripts.js"></script>
+
        <script>
           window.addEventListener('DOMContentLoaded', () => {
            const urlParams = new URLSearchParams(window.location.search);
@@ -299,27 +350,29 @@
                  targetProduct = product;
                } 
              }
-          });
+           });
 
-          if (targetProduct) {
-           setTimeout(() => {
-             targetProduct.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-             targetProduct.classList.add('highlight-product');
+           if (targetProduct) {
              setTimeout(() => {
-               targetProduct.classList.remove('highlight-product');
-             }, 2000);
-           }, 300);
-         }
-        }
-       });
-     </script>
-     <div id="checkoutModal" class="custom-modal">
-       <div class="modal-content">
-         <h3>Adoption Processing!</h3>
-         <p>Thank you for choosing to adopt! Proceeding to the mythical processing sanctuary...</p>
-         <button class="modal-close-btn" onclick="closeCheckoutModal()">OK</button>
+               targetProduct.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+               targetProduct.classList.add('highlight-product');
+               setTimeout(() => {
+                 targetProduct.classList.remove('highlight-product');
+               }, 2000);
+             }, 300);
+           }
+          }
+          });
+       </script>
+
+       <div id="checkoutModal" class="custom-modal">
+         <div class="modal-content">
+           <h3>Adoption Processing!</h3>
+           <p>Thank you for choosing to adopt! Proceeding to the mythical processing sanctuary...</p>
+           <button class="modal-close-btn" onclick="closeCheckoutModal()">OK</button>
+         </div>
        </div>
-      </div>
+       
    </body>
- </html>
+  </html>

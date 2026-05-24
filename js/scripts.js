@@ -180,38 +180,42 @@ function closeCheckoutModal() {
   }
 }
 
-
 //carousel//
 document.addEventListener('DOMContentLoaded', () => {
   const items = document.querySelectorAll(".carousel-item");
-  const nextBtn = document.querySelector(".carousel-control-next, .right-arrow");
-  const prevBtn = document.querySelector(".carousel-control-prev, .left-arrow");
-
+  const nextBtn = document.querySelector(".carousel-control-next, .right-arrow, .carousel-control-next-icon"); 
+  const prevBtn = document.querySelector(".carousel-control-prev, .left-arrow, .carousel-control-prev-icon"); 
+  
   if (items.length > 0) {
     let index = 0;
 
     const showSlide = (newIndex) => {
-      items[index].classList.remove("active");
-      index = (newIndex + items.length) % items.length;
-      items[index].classList.add("active");
+      //Calculate the next valid index first//
+      const nextIndex = (newIndex + items.length) % items.length;
+      
+      //Only switch classes if the index actually changes//
+      if (nextIndex !== index) {
+        items[index].classList.remove("active");
+        items[nextIndex].classList.add("active");
+        index = nextIndex; //Update the tracking index tracking variable//
+      }
     };
+
     if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault(); //Prevents page jumps if arrows are anchor <a> links//
         showSlide(index + 1);
       });
     }
 
     if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         showSlide(index - 1);
       });
     }
   }
 });
-
-
-
-
 
 
 //form logic//
