@@ -19,36 +19,57 @@
       <link rel="stylesheet" href="../assets/fonts/mythology_of_egypt/Mythology Of Egypt.ttf">
   
     </head>
+
     <body class="contact-page">
       <header>
+          <!--Navigation-->
+
+          <!--Logo-->
           <div class="navbar">
             <a href="../index.html" class="logo">
              <img src="../assets/images/logo.png" alt="logo-link">
            </a>
+
+           <!--Links-->
            <nav class="nav-links">
              <a href="../index.html">Home</a>
              <a href="../pages/about.html">Adopt</a>
              <a href="../pages/contact.html">Contact Us</a>
            </nav>
+
+           <!--Search bar-->
            <div class="search-container">
-             <input type="text" id="creatureSearch" placeholder="Search creatures..">
+             <div class="search-input-wrapper">
+               <input type="text" id="creatureSearch" placeholder="Search creatures.." autocomplete="off">
+               <ul id="searchDropdown" class="search-dropdown"></ul>
+             </div>
+
+             <!--Search button-->
              <button id="searchButton" onclick="navigateToProduct()">Search</button>
-             <button id="cartToggleBtn" onclick="toggleCart()">🛒 Cradle (<span id="cartCount">0</span>)</button>
+
+             <!--Cart button-->
+             <button id="cartToggleBtn" onclick="toggleCart()">🛒 Your Cradle (<span id="cartCount">0</span>)</button>
              <div id="errorMessage" style="display: none; color: #ff4d4d; margin-top: 5px; font-size: 14px;"></div>
-           </div>
+           </div>     
          </div>
        </header>
+
+       <!--Cart modal-->
        <div id="cartDrawer" class="cart-drawer">
          <div class="cart-header">
            <h2>Your Cradle</h2>
            <button class="close-cart-btn" onclick="toggleCart()">×</button>
          </div>
+        
+         <!--Products-->
          <div id="cartItemsContainer" class="cart-items-container"></div>
          <div class="cart-footer">
            <div class="cart-total-row">
              <span>Total:</span>
              <span id="cartTotalValue">R0.00</span>
            </div>
+           <!--Buttons-->
+           <button id="continueShoppingBtn" class="continue-sp">Continue Shopping</button>
            <button class="checkout-btn" onclick="checkoutAlert()">Adopt All</button>
          </div>
        </div>
@@ -81,24 +102,28 @@
                <a href="https://www.facebook.com/theopenwindow/posts/on-friday-the-27th-of-february-open-window-stellenbosch-headed-into-the-city-for/1223841959923984/" target="_none">
                  <img src="../assets/images/sm1.png" alt="Facebook" class="social-icon">
                </a>
+
                <a href="https://www.facebook.com/theopenwindow/posts/on-friday-the-27th-of-february-open-window-stellenbosch-headed-into-the-city-for/1223841959923984/" target="_none">
                   <img src="../assets/images/sm4.png" alt="Twitter" class="social-icon">
                </a>
+
                <a href="https://www.instagram.com/openwindowinstitute/?hl=en" target="_none">
                   <img src="../assets/images/sm3.png" alt="Instagram" class="social-icon">
                </a>
+
                <a href="https://www.tiktok.com/@open_window_" target="_none">
                   <img src="../assets/images/sm2.png" alt="Tiktok" class="social-icon">
                </a>
             </div>
-          <div class="map-area">
+            <div class="map-area">
               <p>OR VISIT AT OUR</p>
               <h2>PHYSICAL LOCATION</h2>
               <div class="map-block">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.0648319489073!2d18.847877999999998!3d-33.9394606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcdb33d01361945%3A0x45b7da17d194348e!2sOpen%20Window%20-%20Stellenbosch!5e0!3m2!1sen!2sza!4v1773237283119!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
              </div>
-          </div>
-       </div>
+           </div>
+         </div>
+
        <!--Contact Form-->
        <form id="contactForm" class="contact-card-form" onsubmit="handleFormSubmit(event)">
          <h2>SEND US A MESSAGE</h2>
@@ -106,72 +131,87 @@
            <label for="username">Name:</label>
            <input type="text" name="name" id="username" placeholder="Your Name" required>
          </div>   
+
          <div class="input-group">
            <label for="email">Email Address:</label>
            <input type="email" id="email" placeholder="Your email address.." name="email" required>
          </div>         
+
          <div class="input-group">
            <label for="message">Message:</label>
            <textarea id="message" rows="6" placeholder="Your message.." name="message" required></textarea>
          </div>         
+
          <button type="submit">Submit</button>
        </form>
       </section>
     <!--Footer-->
      <footer>
-               <div class="container-split">
-                 <div class="footer-left">
-                   <a href="../index.html" class="logo">
-                     <img src="../assets/images/logo.png" alt="logo-link">
-                   </a>
-                   <p>Where every legendary creature finds a loving home.</p>
-                 </div>
-               </div>
-               <div class="footer-mid">
-                 <h5>Company</h5>
-                 <a href="../index.html">Home</a>
-                 <a href="../pages/about.html">Adopt</a>
-                 <a href="contact.html">Contact Us</a>
-               </div>
-               <div class="footer-right">
-                 <h6>Social Media Links</h6>
-                 <div class="social-container">
-                     <a href="https://www.facebook.com/theopenwindow/" target="_blank">
-                       <img src="../assets/images/sm1.png" alt="Facebook" class="social-icon">
-                     </a>
-                     <a href="https://x.com/open_window_" target="_blank">
-                       <img src="../assets/images/sm4.png" alt="Twitter" class="social-icon">
-                     </a>
-                     <a href="https://www.instagram.com/openwindowinstitute/" target="_blank">
-                       <img src="../assets/images/sm3.png" alt="Instagram" class="social-icon">
-                     </a>
-                     <a href="https://www.tiktok.com/@open_window_" target="_blank">
-                       <img src="../assets/images/sm2.png" alt="Tiktok" class="social-icon">
-                     </a>
-                   </div>
-               </div>
-               <div class="footer-bottom">
-                   <span>All Rights Reserved &Open Window 2024</span>
-                   <div class="legal-links">
-                     <a href="#">Terms and Conditions</a>
-                     <a href="#">Privacy Policy</a>
-                   </div>
-                 </div>
-       </footer>
-       <script src="../js/scripts.js"></script>
-       <div id="thankYouModal" class="custom-modal">
-         <div class="modal-content">
-           <h3 id="modalGreeting">Thank you!</h3>
-           <p>Your message has been sent to the Mythos Cradle Sanctuary. We will be in contact with you shortly!</p>
-           <button class="modal-close-btn" onclick="closeModal()">OK</button>
-         </div>
+       <div class="container-split">
+          <div class="footer-left">
+            <a href="../index.html" class="logo">
+              <img src="../assets/images/logo.png" alt="logo-link">
+            </a>
+            <p>Where every legendary creature finds a loving home.</p>
+          </div>
+        </div>
+
+        <div class="footer-mid">
+          <h5>Company</h5>
+          <a href="../index.html">Home</a>
+          <a href="../pages/about.html">Adopt</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-right">
+        <h6>Social Media Links</h6>
+
+        <div class="social-container">
+          <a href="https://www.facebook.com/theopenwindow/" target="_blank">
+            <img src="../assets/images/sm1.png" alt="Facebook" class="social-icon">
+          </a>
+
+          <a href="https://x.com/open_window_" target="_blank">
+            <img src="../assets/images/sm4.png" alt="Twitter" class="social-icon">
+          </a>
+
+          <a href="https://www.instagram.com/openwindowinstitute/" target="_blank">
+            <img src="../assets/images/sm3.png" alt="Instagram" class="social-icon">
+          </a>
+
+          <a href="https://www.tiktok.com/@open_window_" target="_blank">
+            <img src="../assets/images/sm2.png" alt="Tiktok" class="social-icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>All Rights Reserved &Open Window 2024</span>
+        <div class="legal-links">
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Privacy Policy</a>
        </div>
-       <div id="checkoutModal" class="custom-modal">
-         <div class="modal-content">
-           <h3>Adoption Processing!</h3>
-           <p>Thank you for choosing to adopt! Proceeding to the mythical processing sanctuary...</p>
-           <button class="modal-close-btn" onclick="closeCheckoutModal()">OK</button>
-         </div>
+      </div>
+    </footer>
+
+    <script src="../js/scripts.js"></script>
+
+      <!--Thank you message for form-->
+      <div id="thankYouModal" class="custom-modal">
+        <div class="modal-content">
+          <h3 id="modalGreeting">Thank you!</h3>
+          <p>Your message has been sent to the Mythos Cradle Sanctuary. We will be in contact with you shortly!</p>
+          <button class="modal-close-btn" onclick="closeModal()">OK</button>
+        </div>
+      </div>
+
+      <!--Checkout message-->
+      <div id="checkoutModal" class="custom-modal">
+        <div class="modal-content">
+          <h3>Adoption Processing!</h3>
+          <p>Thank you for choosing to adopt! Proceeding to the mythical processing sanctuary...</p>
+          <button class="modal-close-btn" onclick="closeCheckoutModal()">OK</button>
        </div>
+      </div>
    </body>
  </html>

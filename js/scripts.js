@@ -1,4 +1,15 @@
 //search bar logic//
+
+const availableProducts = [
+  "Blue Dragon - Azuron",
+  "Kitsune - Yuki",
+  "Griffin - Aurelia",
+  "Water Wisp - Lumina",
+  "Pegasus - Starwind",
+  "Forest Spirit - Briar",
+];
+
+
 function navigateToProduct() {
     const searchInput = document.getElementById('creatureSearch');
     if (!searchInput) return;
@@ -9,15 +20,60 @@ function navigateToProduct() {
         return;
     }
 
-    window.location.href = `/pages/about.html?search=${encodeURIComponent(query)}`;
+    goToAboutPage(query);
+}
+
+function goToAboutPage(queryText) {
+  window.location.href = `/pages/about.html?search=${encodeURIComponent(queryText)}`;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('creatureSearch');
-  if (searchInput) {
+  const dropdown = document.getElementById('searchDropdown');
+
+  if (searchInput && dropdown) {
+
+    searchInput.addEventListener('input', function () {
+      const query = this.value.trim().toLowerCase();
+      dropdown.innerHTML = ''; 
+      
+      if (query === "") {
+        dropdown.classList.remove('show');
+        return;
+      }
+
+      const matches = availableProducts.filter(product => 
+        product.toLowerCase().includes(query)
+      );
+
+      if (matches.length > 0) {
+        matches.forEach(match => {
+          const li = document.createElement('li');
+          li.className = 'dropdown-item';
+          li.textContent = match;
+          li.addEventListener('click', () => {
+            searchInput.value = match;
+            dropdown.classList.remove('show');
+            goToAboutPage(match);
+          });
+
+          dropdown.appendChild(li);
+        });
+        dropdown.classList.add('show'); 
+        } else {
+        dropdown.classList.remove('show');
+      }
+    });
+
     searchInput.addEventListener('keypress', function (e) {
       if (e.key === 'Enter') {
         navigateToProduct();
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.remove('show');
       }
     });
   }
@@ -32,7 +88,18 @@ window.addEventListener('DOMContentLoaded', () => {
   updateCartUI();
   setupAddToCartListeners();
   setupQuantityButtonListeners();
+  setupContinueShoppingListener();
 });
+
+function setupContinueShoppingListener() {
+  const continueBtn = document.getElementById('continueShoppingBtn');
+  if (continueBtn) {
+    continueBtn.addEventListener('click', () => {
+      toggleCart(false); 
+      window.location.href = '/pages/about.html'; 
+    });
+  }
+}
 
 function setupQuantityButtonListeners() {
   const minusButtons = document.querySelectorAll('.qty-btn-minus');
@@ -168,8 +235,6 @@ function checkoutAlert() {
   if (modal) {
     modal.classList.add('show');
   }
-  cart = [];
-  saveCartAndRefresh();
   toggleCart(false); 
 }
 
@@ -178,7 +243,14 @@ function closeCheckoutModal() {
   if (modal) {
     modal.classList.remove('show');
   }
+
+ //clears cart only after closing alert modal//
+ cart = [];
+ saveCartAndRefresh();
+ //redirects to homepage//
+ window.location.href = '/index.html';
 }
+
 
 //carousel//
 document.addEventListener('DOMContentLoaded', () => {

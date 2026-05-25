@@ -21,40 +21,59 @@
       <link rel="stylesheet" href="../css/main.css">
       <link rel="local-font" href="../assets/fonts/mythology_of_egypt/Mythology Of Egypt.ttf">
    </head>
+
    <body class="adopt-page">
      <header>
+        <!--Navigation-->
+
+        <!--Logo-->
         <div class="navbar">
           <a href="../index.html" class="logo">
              <img src="../assets/images/logo.png" alt="logo-link">
            </a>
 
+           <!--Links-->
            <nav class="nav-links">
              <a href="../index.html">Home</a>
              <a href="../pages/about.html">Adopt</a>
              <a href="../pages/contact.html">Contact Us</a>
            </nav>
 
+           <!--Search bar-->
            <div class="search-container">
-             <input type="text" id="creatureSearch" placeholder="Search creatures..">
+             <div class="search-input-wrapper">
+               <input type="text" id="creatureSearch" placeholder="Search creatures.." autocomplete="off">
+               <ul id="searchDropdown" class="search-dropdown"></ul>
+             </div>
+
+             <!--Search button-->
              <button id="searchButton" onclick="navigateToProduct()">Search</button>
-             <button id="cartToggleBtn" onclick="toggleCart()">🛒 Cradle (<span id="cartCount">0</span>)</button>
+
+             <!--Cart button-->
+             <button id="cartToggleBtn" onclick="toggleCart()">🛒 Your Cradle (<span id="cartCount">0</span>)</button>
              <div id="errorMessage" style="display: none; color: #ff4d4d; margin-top: 5px; font-size: 14px;"></div>
-           </div>
+           </div>        
         </div>
       </header>
-
+       <!--Cart-->
        <div id="cartDrawer" class="cart-drawer">
+
+         <!--Heading-->
          <div class="cart-header">
            <h2>Your Cradle</h2>
            <button class="close-cart-btn" onclick="toggleCart()">×</button>
          </div>
 
+         <!--Items and total-->
          <div id="cartItemsContainer" class="cart-items-container"></div>
          <div class="cart-footer">
            <div class="cart-total-row">
              <span>Total:</span>
              <span id="cartTotalValue">R0.00</span>
            </div>
+
+           <!--Checkout and continue button-->
+           <button id="continueShoppingBtn" class="continue-sp">Continue Shopping</button>
            <button class="checkout-btn" onclick="checkoutAlert()">Adopt All</button>
          </div>
        </div>
@@ -96,6 +115,7 @@
        </div>   
 
        <!--Product Sections (Alternating)-->
+
        <!--Azuron-->
        <section class="products" id="product-list">
          <section class="product-page-white" data-id="1">
@@ -280,11 +300,11 @@
                  </div>
              </section>
              
-             <!--"cradle a legend btn"-->
+             <!--"cradle a legend" btn-->
              <a href="../pages/contact.html" class="btn-primary" type="button">Cradle a legend</a>
          </section>  
 
-             <!-- Footer -->
+             <!--Footer-->
              <footer>
                <div class="container-split">
                  <div class="footer-left">
@@ -331,6 +351,7 @@
 
        <script src="../js/scripts.js"></script>
 
+       <!--Smooth scroll on product search-->
        <script>
           window.addEventListener('DOMContentLoaded', () => {
            const urlParams = new URLSearchParams(window.location.search);
@@ -366,6 +387,7 @@
           });
        </script>
 
+       <!--Checkout message-->
        <div id="checkoutModal" class="custom-modal">
          <div class="modal-content">
            <h3>Adoption Processing!</h3>

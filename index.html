@@ -13,53 +13,70 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
       
       <title>The Mythos Cradle</title>
 
       <link rel="stylesheet" href="css/main.css">
       <link rel="local-font" href="../assets/fonts/mythology_of_egypt/Mythology Of Egypt.ttf">
-
    </head>
   
    <body class="home-page">
      <header>
         <!--Navigation-->
+
+        <!--Logo-->
         <div class="navbar">
          <a href="index.html" class="logo">
            <img src="assets/images/logo.png" alt="logo-link">
          </a>
+
+         <!--Links-->
          <nav class="nav-links">
            <a href="index.html">Home</a>
            <a href="pages/about.html">Adopt</a>
            <a href="pages/contact.html">Contact Us</a>
          </nav>
          
+         <!--Search bar-->
          <div class="search-container">
-           <input type="text" id="creatureSearch" placeholder="Search creatures..">
+           <div class="search-input-wrapper">
+             <input type="text" id="creatureSearch" placeholder="Search creatures.." autocomplete="off">
+             <ul id="searchDropdown" class="search-dropdown"></ul>
+           </div>
+
+           <!--Search button-->
            <button id="searchButton" onclick="navigateToProduct()">Search</button>
-           <button id="cartToggleBtn" onclick="toggleCart()">🛒 Cradle (<span id="cartCount">0</span>)</button>
+           
+           <!--Cart button-->
+           <button id="cartToggleBtn" onclick="toggleCart()">🛒 Your Cradle (<span id="cartCount">0</span>)</button>
            <div id="errorMessage" style="display: none; color: #ff4d4d; margin-top: 5px; font-size: 14px;"></div>
-         </div>
-        </div>
+         </div>     
+       </div>
      </header>
 
+     <!--Cart modal-->
      <div id="cartDrawer" class="cart-drawer">
+       <!--Header-->>
        <div class="cart-header">
          <h2>Your Cradle</h2>
          <button class="close-cart-btn" onclick="toggleCart()">×</button>
        </div>
 
+       <!--Products-->
        <div id="cartItemsContainer" class="cart-items-container"></div>
        <div class="cart-footer">
+         <!--Cart total-->>
          <div class="cart-total-row">
            <span>Total:</span>
            <span id="cartTotalValue">R0.00</span>
          </div>
 
+         <!--Buttons-->
+         <button id="continueShoppingBtn" class="continue-sp">Continue Shopping</button>
          <button class="checkout-btn" onclick="checkoutAlert()">Adopt All</button>
        </div>
-
      </div>
 
      <!--Hero Banner-->
@@ -74,18 +91,22 @@
      <section id="about" class="feature-dark">
        <div id="carouselExampleFade" class="carousel slide carousel-fade">
          
+        <!--carousel images-->
         <div class="carousel-inner">
            <div class="carousel-item active">
              <img src="assets/images/imageSlider1.png" class="d-block w-100" alt="slide1">
            </div>
+
            <div class="carousel-item">
              <img src="assets/images/adopt3.png" class="d-block w-100" alt="slide2">
            </div>
+
            <div class="carousel-item">
              <img src="assets/images/adopt5.png" class="d-block w-100" alt="slide3">
            </div>
          </div>
 
+         <!--Carousel-->
          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
            <span class="visually-hidden">Previous</span>
@@ -97,16 +118,18 @@
          </button>
 
        </div>
+
+       <!--Info section-->
        <div class="content-column">
          <p1>BEGIN YOUR JOURNEY</p1>
          <h2>Tiny Legends</h2>
          <h2>Big Hearts</h2>
          <p2>Begin your journey into legend: tiny dragons, shimmering pegasi, mischievous kitsune, and watchful basilisks are ready to meet their families. Delight in enchanted encounters, gentle care, and joyful playtime. Heartwarming bonds await as these legendary creatures find their forever homes.</p2>
-         <a href="./pages/about.html" class="btn-primary" type="button">Cradle a legend</a>
+         <a href="./pages/about.html" class="info-btn" type="button">Cradle a legend</a>
         </div>
      </section>
 
-     <!--Info Section-->
+     <!--Info Section 2-->
      <section class="info-section">
            <div class="container split reverse">
              <div class="textbox">
@@ -123,36 +146,43 @@
                </div>
            </div>
       </section>
-      <!--Creature Cards-->
+
+      <!--Previous friends-->
        <section class="cards-section-container">
          <p>LOOKING IN ON PAST FRIENDS</p>
          <h3>FROM CRADLE TO FAMILY: A</h3>
          <h3>LEGEND AT HOME</h3>
+
          <div class="text-footer-container">
            <div class="card">
              <img src="assets/images/successImg1.png" alt="Percy" class="adopted-creatures">
              <h4>Percy's Quiet Winter Days</h4>
              <p>Explore red deserts, ancient relics, and a once shy in the cold- Percy, who now explores snowy peaks wrapped in warmth, curiosity and family love.</p>
            </div>
+
            <div class="card">
               <img src="assets/images/successImg2.png" alt="Ripple" class="adopted-creatures">
               <h4>Ripple's Gentle River Home</h4>
               <p>Gentle Ripple has found peace along flowing waters, bonded closely with a family who care and treasure them.</p>
            </div>
+
            <div class="card">
              <img src="assets/images/successImg3.png" alt="Atlas" class="adopted-creatures">
              <h4>Atlas Learns to</h4>
              <h4>Trust</h4>
              <p>Brave little Atlas grows stronger each day, learning to trust and in a courage filled home with patience.</p>
            </div>
+
            <div class="card">
              <img src="assets/images/successImg4.png" alt="Skye" class="adopted-creatures">
              <h4>Skye's First Open Skies</h4>
              <p>Skye's wings have stretched freely at last, soaring happily above a home where wonder is always welcome and curiosity is always a factor.</p>
            </div>
          </div>
+
          <a href="pages/about.html" class="btn-primary" type="button">Cradle a legend</a>
        </section>
+
        <!-- Footer -->
        <footer>
            <div class="container-split">
@@ -163,29 +193,35 @@
                <p>Where every legendary creature finds a loving home.</p>
               </div>
            </div>
+
            <div class="footer-mid">
                <h5>Company</h5>
                <a href="index.html">Home</a>
                <a href="pages/about.html">Adopt</a>
                <a href="pages/contact.html">Contact Us</a>
              </div>
+
              <div class="footer-right">
                  <h6>Social Media Links</h6>
                  <div class="social-container">
                      <a href="https://www.facebook.com/theopenwindow/" target="_blank">
                        <img src="assets/images/sm1.png" alt="Facebook" class="social-icon">
                      </a>
+
                      <a href="https://x.com/open_window_" target="_blank">
                        <img src="assets/images/sm4.png" alt="Twitter" class="social-icon">
                      </a>
+
                      <a href="https://www.instagram.com/openwindowinstitute/" target="_blank">
                        <img src="assets/images/sm3.png" alt="Instagram" class="social-icon">
                      </a>
+
                      <a href="https://www.tiktok.com/@open_window_" target="_blank">
                        <img src="assets/images/sm2.png" alt="Tiktok" class="social-icon">
                      </a>
                    </div>
                </div>
+
                <div class="footer-bottom">
                    <span>All Rights Reserved &Open Window 2024</span>
                    <div class="legal-links">
@@ -194,7 +230,10 @@
                    </div>
                  </div>
        </footer>
+
        <script src="js/scripts.js"></script>
+
+       <!--Checkout message-->
        <div id="checkoutModal" class="custom-modal">
          <div class="modal-content">
            <h3>Adoption Processing!</h3>
@@ -202,5 +241,6 @@
            <button class="modal-close-btn" onclick="closeCheckoutModal()">OK</button>
          </div>
        </div>
+       
     </body>
 </html>
