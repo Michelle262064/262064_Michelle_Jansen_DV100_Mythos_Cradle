@@ -860,12 +860,14 @@ html {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    cursor: pointer;
 }
 
 .qty-control, .qty-control-sp, .add-to-cart-btn {
     margin: 0 !important;
     display: inline-flex !important;
     vertical-align: middle !important;
+    cursor: pointer;
 }
 
 .qty-control, .qty-control-sp {
@@ -876,6 +878,7 @@ html {
     margin: 25px 0 !important;
     width: auto !important;
     float: left;
+    cursor: pointer;
 }
 
 .qty-btn-minus, .qty-box, .qty-box2, .qty-btn-plus {
@@ -883,15 +886,18 @@ html {
     vertical-align: middle !important;
     float: left !important; 
     margin: 0 !important; 
+    cursor: pointer;
 }
 
 .qty-btn-plus {
     margin-right: 15px !important;
+    cursor: pointer;
 }
 
 .qty-btn-minus, .qty-btn-plus {
     line-height: 1 !important;
     padding: 0 0 3px 0 !important; 
+    cursor: pointer;
 }
 
 .qty-btn-minus, .qty-btn-plus {
@@ -908,18 +914,21 @@ html {
     user-select: none !important;
     margin: 0 !important;
     cursor: pointer !important;
+    cursor: pointer;
 }
 
 .qty-control .qty-btn-minus {
     background-color: var(--primary-blue) !important;
     color: var(--text-primary-white) !important;
     border-radius: 5px 0 0 5px !important; 
+    cursor: pointer;
 }
 
 .qty-control .qty-btn-plus {
     background-color: var(--primary-blue) !important;
     color: var(--text-primary-white) !important;
     border-radius: 0 5px 5px 0 !important; 
+    cursor: pointer;
 }
 .qty-box {
     background: var(--primary-blue) !important;
@@ -946,11 +955,13 @@ html {
     background-color: var(--accent-yellow) !important;
     color: var(--text-primary-white) !important;
     border-radius: 5px 0 0 5px !important;
+    cursor: pointer;
 }
 .qty-control-sp .qty-btn-plus {
     background-color: var(--accent-yellow) !important;
     color: var(--text-primary-white) !important;
     border-radius: 0 5px 5px 0 !important;
+    cursor: pointer;
 }
 .qty-box2 {
     background: var(--accent-yellow) !important;
@@ -994,6 +1005,7 @@ html {
     vertical-align: middle !important;
     float: left !important;
     white-space: nowrap !important;
+    cursor: pointer;
 }
 
 .add-to-cart-btn:hover {
