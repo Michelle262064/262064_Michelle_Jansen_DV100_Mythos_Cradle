@@ -1,5 +1,6 @@
 //search bar logic//
 
+//keywords for search//
 const availableProducts = [
   "Blue Dragon - Azuron",
   "Kitsune - Yuki",
@@ -9,7 +10,7 @@ const availableProducts = [
   "Forest Spirit - Briar",
 ];
 
-
+//enter name in search to navigate to products//
 function navigateToProduct() {
     const searchInput = document.getElementById('creatureSearch');
     if (!searchInput) return;
@@ -23,10 +24,12 @@ function navigateToProduct() {
     goToAboutPage(query);
 }
 
+//page for products//
 function goToAboutPage(queryText) {
   window.location.href = `/pages/about.html?search=${encodeURIComponent(queryText)}`;
 }
 
+//dropdown for products ruleset//
 window.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('creatureSearch');
   const dropdown = document.getElementById('searchDropdown');
@@ -71,6 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    //event listener for clicking search to trigger scroll//
     document.addEventListener('click', function(e) {
       if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
         dropdown.classList.remove('show');
@@ -79,8 +83,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-//cart logic//
-
+//cart logic local storage//
 let cart = JSON.parse(localStorage.getItem('myCradleCart')) || [];
 
 //setup hooks
@@ -91,6 +94,7 @@ window.addEventListener('DOMContentLoaded', () => {
   setupContinueShoppingListener();
 });
 
+//continue shopping button logic//
 function setupContinueShoppingListener() {
   const continueBtn = document.getElementById('continueShoppingBtn');
   if (continueBtn) {
@@ -101,10 +105,12 @@ function setupContinueShoppingListener() {
   }
 }
 
+//qty selector buttons logic//
 function setupQuantityButtonListeners() {
   const minusButtons = document.querySelectorAll('.qty-btn-minus');
   const plusButtons = document.querySelectorAll('.qty-btn-plus');
 
+  //minus//
   minusButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       const container = e.target.closest('.qty-control, .qty-control-sp');
@@ -118,20 +124,26 @@ function setupQuantityButtonListeners() {
     });
   });
 
+  //plus//
   plusButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       const container = e.target.closest('.qty-control, .qty-control-sp');
       const qtyBox = container.querySelector('.qty-box, .qty-box2');
       let currentQty = parseInt(qtyBox.textContent) || 1;
       
+      //total qty//
       currentQty++;
       qtyBox.textContent = currentQty;
     });
   });
 }
 
+
+//add to cart button//
 function setupAddToCartListeners() {
   const addButtons = document.querySelectorAll('.add-to-cart-btn');
+
+  //event//
   addButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       const productSection = e.target.closest('section[data-id]');
@@ -215,16 +227,11 @@ function updateCartUI() {
   if (totalValueEl) totalValueEl.textContent = `R${totalCost.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`;
 }
 
-function toggleCart(forceOpen = null) {
-  const drawer = document.getElementById('cartDrawer');
-  if (!drawer) return;
-
-  if (forceOpen === true) {
-    drawer.classList.add('open');
-  } else {
-    drawer.classList.toggle('open');
-  }
+function toggleCart() {
+  const cartDrawer= document.getElementById('cartDrawer');
+  cartDrawer.classList.toggle('open');
 }
+document.getElementById('continueShoppingBtn').addEventListener('click', toggleCart);
 
 function checkoutAlert() {
   if (cart.length === 0) {
@@ -288,7 +295,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
-
 
 //form logic//
 function handleFormSubmit(event) {
