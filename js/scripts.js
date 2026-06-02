@@ -1,5 +1,4 @@
 //search bar logic//
-
 //keywords for search//
 const availableProducts = [
   "Blue Dragon - Azuron",
@@ -22,14 +21,12 @@ function navigateToProduct() {
     }
 
     goToAboutPage(query);
-    event.preventDefault();
-}
+};
 
 //page for products//
 function goToAboutPage(queryText) {
   window.location.href = `/pages/about.html?search=${encodeURIComponent(queryText)}`;
-  event.preventDefault();
-}
+};
 
 //dropdown for products ruleset//
 window.addEventListener('DOMContentLoaded', () => {
@@ -83,7 +80,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  event.preventDefault();
 });
 
 //cart logic local storage//
@@ -107,8 +103,7 @@ function setupContinueShoppingListener() {
       window.location.href = '/pages/about.html'; 
     });
   }
-  event.preventDefault();
-}
+};
 
 //qty selector buttons logic//
 function setupQuantityButtonListeners() {
@@ -141,8 +136,7 @@ function setupQuantityButtonListeners() {
       qtyBox.textContent = currentQty;
     });
   });
-  event.preventDefault();
-}
+};
 
 
 //add to cart button//
@@ -177,8 +171,7 @@ function setupAddToCartListeners() {
       if (qtyElement) qtyElement.textContent = "1";
     });
   });
-  event.preventDefault();
-}
+};
 
 function addToCart(id, title, price, quantity) {
   const existingItemIndex = cart.findIndex(item => item.id === id);
@@ -190,20 +183,17 @@ function addToCart(id, title, price, quantity) {
   }
   saveCartAndRefresh();
   toggleCart(true);
-  event.preventDefault();
-}
+};
 
 function removeFromCart(id) {
   cart = cart.filter(item => String(item.id) !== String(id));
   saveCartAndRefresh();
-  event.preventDefault();
-}
+};
 
 function saveCartAndRefresh() {
   localStorage.setItem('myCradleCart', JSON.stringify(cart));
   updateCartUI();
-  event.preventDefault();
-}
+};
 
 function updateCartUI() {
   const cartCountEl = document.getElementById('cartCount');
@@ -235,14 +225,13 @@ function updateCartUI() {
   });
   if (cartCountEl) cartCountEl.textContent = totalItemsCount;
   if (totalValueEl) totalValueEl.textContent = `R${totalCost.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`;
-  event.preventDefault();
-}
+};
 
 function toggleCart() {
   const cartDrawer= document.getElementById('cartDrawer');
   cartDrawer.classList.toggle('open');
-  event.preventDefault();
-}
+};
+
 document.getElementById('continueShoppingBtn').addEventListener('click', toggleCart);
 
 function checkoutAlert() {
@@ -255,8 +244,7 @@ function checkoutAlert() {
     modal.classList.add('show');
   }
   toggleCart(false); 
-  event.preventDefault();
-}
+};
 
 function closeCheckoutModal() {
   const modal = document.getElementById('checkoutModal');
@@ -269,8 +257,7 @@ function closeCheckoutModal() {
  saveCartAndRefresh();
  //redirects to homepage//
  window.location.href = '/index.html';
- event.preventDefault();
-}
+};
 
 
 //carousel//
@@ -308,7 +295,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
-  event.preventDefault();
 });
 
 //form logic//
@@ -329,12 +315,11 @@ function handleFormSubmit(event) {
   }
   modal.classList.add('show');
   form.reset();
-  event.preventDefault();
-}
+};
 
 function closeModal() {
     const modal = document.getElementById('thankYouModal');
     if (modal) {
         modal.classList.remove('show');
     }
-}
+};
