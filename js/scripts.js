@@ -25,7 +25,7 @@ function navigateToProduct() {
 
 //page for products//
 function goToAboutPage(queryText) {
-  window.location.href = `/pages/about.html?search=${encodeURIComponent(queryText)}`;
+  window.location.href = `/pages/about.html?search=${encodeURIComponent(queryText)}`; //Url redirection//
 };
 
 //dropdown for products ruleset//
@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('creatureSearch');
   const dropdown = document.getElementById('searchDropdown');
 
-  if (searchInput && dropdown) {
+  if (searchInput && dropdown) { //constantly checks for existing elements//
 
     searchInput.addEventListener('input', function () {
       const query = this.value.trim().toLowerCase();
@@ -143,7 +143,6 @@ function setupQuantityButtonListeners() {
 function setupAddToCartListeners() {
   const addButtons = document.querySelectorAll('.add-to-cart-btn');
 
-  //event//
   addButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       const productSection = e.target.closest('section[data-id]');
@@ -158,7 +157,7 @@ function setupAddToCartListeners() {
       let price = 0;
       if (priceElement) {
 
-       let priceText = priceElement.textContent.replace(/\s+/g, '');
+       let priceText = priceElement.textContent.replace(/\s+/g, ''); //manual string parsing//
        priceText = priceText.replace(',', '.');
        priceText = priceText.replace(/[^0-9.]/g, '');
        price = parseFloat(priceText) || 0;
@@ -214,7 +213,8 @@ function updateCartUI() {
     itemRow.className = 'cart-item';
     itemRow.style.cssText = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #f5f5f5;";
     
-    itemRow.innerHTML = `
+    //raw HTML to render cart items//
+    itemRow.innerHTML = ` 
        <div class="cart-item-details">
         <h4 style="margin: 0 0 5px 0; font-size: 15px;">${item.title}</h4>
         <p style="margin: 0; font-size: 13px; color: #666;">R${item.price.toLocaleString('en-ZA', { minimumFractionDigits: 2 })} x ${item.quantity}</p>
@@ -263,7 +263,7 @@ function closeCheckoutModal() {
 //carousel//
 document.addEventListener('DOMContentLoaded', () => {
   const items = document.querySelectorAll(".carousel-item");
-  const nextBtn = document.querySelector(".carousel-control-next, .right-arrow, .carousel-control-next-icon"); 
+  const nextBtn = document.querySelector(".carousel-control-next, .right-arrow, .carousel-control-next-icon"); //uses multiple classes for single function to prevent errors//
   const prevBtn = document.querySelector(".carousel-control-prev, .left-arrow, .carousel-control-prev-icon"); 
   
   if (items.length > 0) {
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const showSlide = (newIndex) => {
       //Calculate the next valid index first//
-      const nextIndex = (newIndex + items.length) % items.length;
+      const nextIndex = (newIndex + items.length) % items.length; //mathematical formula to calculate which slide is next - uses Modulo Operator//
       
       //Only switch classes if the index actually changes//
       if (nextIndex !== index) {
