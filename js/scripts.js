@@ -82,7 +82,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-//cart logic local storage//
+//cart logic //
+// local storage//
 let cart = JSON.parse(localStorage.getItem('myCradleCart')) || [];
 
 //setup hooks
@@ -96,7 +97,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //continue shopping button logic//
 function setupContinueShoppingListener() {
-  const continueBtn = document.getElementById('continueShoppingBtn');
+  const continueBtn = document.getElementById('continueShoppingBtn'); //Searches the page DOM for a button with the unique identifier//
   if (continueBtn) {
     continueBtn.addEventListener('click', () => {
       toggleCart(false); 
@@ -112,7 +113,7 @@ function setupQuantityButtonListeners() {
 
   //minus//
   minusButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
+    button.addEventListener('click', (e) => { //Goes through every single minus button found on the page and mounts an individual click observer to each one//
       const container = e.target.closest('.qty-control, .qty-control-sp');
       const qtyBox = container.querySelector('.qty-box, .qty-box2');
       let currentQty = parseInt(qtyBox.textContent) || 1;
@@ -125,10 +126,10 @@ function setupQuantityButtonListeners() {
   });
 
   //plus//
-  plusButtons.forEach(button => {
+  plusButtons.forEach(button => { //Goes through every single plus button found on the page and mounts an individual click observer to each one//
     button.addEventListener('click', (e) => {
       const container = e.target.closest('.qty-control, .qty-control-sp');
-      const qtyBox = container.querySelector('.qty-box, .qty-box2');
+      const qtyBox = container.querySelector('.qty-box, .qty-box2'); //Isolate the text field displaying the active selection count//
       let currentQty = parseInt(qtyBox.textContent) || 1;
       
       //total qty//
@@ -189,7 +190,7 @@ function removeFromCart(id) {
   saveCartAndRefresh();
 };
 
-function saveCartAndRefresh() {
+function saveCartAndRefresh() { //Translates live array collection states back into plain JSON layout strings to write to local browser storage, and signals view update pipelines//
   localStorage.setItem('myCradleCart', JSON.stringify(cart));
   updateCartUI();
 };
@@ -208,12 +209,13 @@ function updateCartUI() {
     totalItemsCount += item.quantity;
     totalCost += item.price * item.quantity;
 
-    const itemRow = document.createElement('div');
+    const itemRow = document.createElement('div'); //Generates pristine structural shell divisions in isolation, applying classes and explicit layout style overrides//
 
     itemRow.className = 'cart-item';
     itemRow.style.cssText = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #f5f5f5;";
     
     //raw HTML to render cart items//
+    //Injects text strings inside templates using template literals. Renders formatted currency figures explicitly built using localized South African criteria rulesets//
     itemRow.innerHTML = ` 
        <div class="cart-item-details">
         <h4 style="margin: 0 0 5px 0; font-size: 15px;">${item.title}</h4>
@@ -221,7 +223,7 @@ function updateCartUI() {
       </div>
       <button class="remove-item-btn" onclick="removeFromCart('${item.id}')" style="background: none; border: none; color: #ff4d4d; cursor: pointer; font-size: 13px;">Remove</button>
     `;
-    itemsContainer.appendChild(itemRow);
+    itemsContainer.appendChild(itemRow); //Physically appends the updated off-screen structural fragments directly onto the visible live document view model//
   });
   if (cartCountEl) cartCountEl.textContent = totalItemsCount;
   if (totalValueEl) totalValueEl.textContent = `R${totalCost.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`;
@@ -234,7 +236,7 @@ function toggleCart() {
 
 document.getElementById('continueShoppingBtn').addEventListener('click', toggleCart);
 
-function checkoutAlert() {
+function checkoutAlert() { //Blocks purchase operations if the application state array contains no valid products//
   if (cart.length === 0) {
     alert("Your Cradle is empty!");
     return;
@@ -248,15 +250,15 @@ function checkoutAlert() {
 
 function closeCheckoutModal() {
   const modal = document.getElementById('checkoutModal');
-  if (modal) {
+  if (modal) { //thank you message after checkout is clicked//
     modal.classList.remove('show');
   }
 
  //clears cart only after closing alert modal//
  cart = [];
- saveCartAndRefresh();
+ saveCartAndRefresh(); //Empties the cart array state and flushes updates straight to memory to clear out data records completely//
  //redirects to homepage//
- window.location.href = '/index.html';
+ window.location.href = '/index.html'; 
 };
 
 
@@ -298,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //form logic//
-function handleFormSubmit(event) {
+function handleFormSubmit(event) { // Declares a function to manage form submissions. It accepts the event object automatically passed by the browser when a form is submitted//
   event.preventDefault();
 
   const usernameInput = document.getElementById('username');
@@ -313,7 +315,7 @@ function handleFormSubmit(event) {
   if (modalGreeting) {
     modalGreeting.textContent = `Thank you, ${username}!`;
   }
-  modal.classList.add('show');
+  modal.classList.add('show'); //Appends CSS styling class to the popup frame work//
   form.reset();
 };
 
