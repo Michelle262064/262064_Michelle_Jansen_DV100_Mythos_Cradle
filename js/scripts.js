@@ -195,7 +195,7 @@ function saveCartAndRefresh() { //Translates live array collection states back i
   updateCartUI();
 };
 
-function updateCartUI() {
+function updateCartUI() { //prevents duplicate products//
   const cartCountEl = document.getElementById('cartCount');
   const itemsContainer = document.getElementById('cartItemsContainer');
   const totalValueEl = document.getElementById('cartTotalValue');
